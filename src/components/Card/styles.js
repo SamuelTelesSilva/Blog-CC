@@ -26,10 +26,8 @@ export const Container = styled.div`
 
 export const CardMain = styled.div`
     display: block;
-    
     margin: 5px;
     
-
     .card-title{
         margin-bottom: 5px;
         font-style: normal;

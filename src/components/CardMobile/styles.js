@@ -4,7 +4,7 @@ export const Container = styled.div`
     display: block;
     border: 2px solid var(--colorMain);
     border-radius: 5px;
-
+    background-color: #FFFFFF;
 
     .cont-main{
         display: flex;

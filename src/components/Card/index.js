@@ -6,12 +6,12 @@ import CardMobile from '../CardMobile/index';
 
 const Card = () => {
 
-    let displayResult = "flex";
+    let displayResult = 'flex';
     
     const { width } = useWindowDimensions();
 
     if( width <= 768 ){
-        displayResult = "none";
+        displayResult = 'none';
         return <CardMobile />;
     }
 
