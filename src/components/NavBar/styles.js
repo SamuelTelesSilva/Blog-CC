@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Menu } from '@styled-icons/boxicons-regular/Menu'
 
 export const Container = styled.div`
     display: flex;
@@ -68,7 +67,7 @@ export const Nav = styled.nav`
         }
     }
 
-    .li-pu{
+    .li-publicar{
         margin-left: 40px;
         width:80px;
         height: 40px;
@@ -88,15 +87,5 @@ export const Nav = styled.nav`
 
 `;
 
-
-export const MenuIconMob = styled(Menu)`
-    color: white;
-    width: 35px;
-    margin-left: 1px; 
-
-    :hover{
-        cursor: pointer;
-    }
-`;
 
 
