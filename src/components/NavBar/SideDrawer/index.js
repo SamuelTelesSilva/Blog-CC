@@ -4,7 +4,7 @@ import MenuIcon from '../MenuIcon/index';
 import NavMenu from '../NavMenu/index';
 
 
-const MenuMobile = () => {
+const SideDrawer = () => {
 
     const [drawMenu, setDrawMenu] = useState(false);
     let menuClasses = ["menu"];
@@ -24,7 +24,6 @@ const MenuMobile = () => {
                 <div onClick={openMenu} className="button-menu"> 
                     <MenuIcon open="close"/>
                 </div>
-                {/*NavMenu esta recebendo como props alguns dados, essas variaveis voce pode ver la no styles do NavMenu*/}
                 <NavMenu  
                     block="block"
                     widthUl="100%"
@@ -36,4 +35,4 @@ const MenuMobile = () => {
         </Container>
     );
 }
-export default MenuMobile;
+export default SideDrawer;

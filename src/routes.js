@@ -1,15 +1,15 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Card from './components/Card';
-import NavBar from './components/navBarResponsive/NavBar';
-import MenuMobile from './components/navBarResponsive/MenuMobile'
+import Toolbar from './components/NavBar/Toolbar';
+import SideDrawer from './components/NavBar/SideDrawer'
 
 const Routes = () => (
     <BrowserRouter>
         <Switch>
             <Route exact path="/card" component={Card} />
-            <Route path="/nav" component={ NavBar } />
-            <Route path="/men" component={ MenuMobile } />
+            <Route path="/nav" component={ Toolbar } />
+            <Route path="/men" component={ SideDrawer } />
         </Switch>
     </BrowserRouter> 
 );

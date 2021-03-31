@@ -3,7 +3,6 @@ import { Container} from './styles';
 
 const NavMenu = (props) => {
 
-    /*aqui estou pegando via props e passando para o component, dentro do container ele pega as props e manda para o styled components*/
     return(
         <Container
             block={props.block}

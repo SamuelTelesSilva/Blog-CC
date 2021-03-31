@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 
-
-
 export const Container = styled.div`
     display: block;
-    
 
     .menu{
         width:70%;

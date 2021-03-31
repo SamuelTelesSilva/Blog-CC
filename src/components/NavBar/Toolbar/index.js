@@ -2,16 +2,15 @@ import React from 'react';
 import {Button, Container} from './styles';
 
 import useWindowDimensions from '../../useWindowDimensions/index';
-import MenuMobile from '../MenuMobile/index';
+import SideDrawer from '../SideDrawer/index';
 import NavMenu from '../NavMenu/index';
 
-const NavBar = () => {
+const Toolbar = () => {
     const { width } = useWindowDimensions();
 
     const Desktop = (
         <Container>
             <Button>Blog</Button>
-            {/*NavMenu esta recebendo como props alguns dados, essas variaveis voce pode ver la no styles do NavMenu*/}
             <NavMenu 
                 mRight="20px"
                 mLeftLi = "10px"
@@ -22,7 +21,7 @@ const NavBar = () => {
 
     const Mobile = (
         <Container>
-            <MenuMobile/>  
+            <SideDrawer/>  
         </Container>
     );
 
@@ -30,4 +29,4 @@ const NavBar = () => {
         width <= 768 ? Mobile : Desktop
     );
 }
-export default NavBar;
+export default Toolbar;
