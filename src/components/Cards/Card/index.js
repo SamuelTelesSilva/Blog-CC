@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, CardMain, CardDetail} from './styles';
 import ButtonCard from '../ButtonCard/index';
-import useWindowDimensions from '../useWindowDimensions/index';
+import useWindowDimensions from '../../useWindowDimensions/index';
 import CardMobile from '../CardMobile/index';
 
 const Card = () => {
