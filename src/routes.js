@@ -1,8 +1,8 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Card from './components/Card';
-import NavBar from './components/NavBar';
-import MenuMobile from './components/MenuMobile'
+import NavBar from './components/navBarResponsive/NavBar';
+import MenuMobile from './components/navBarResponsive/MenuMobile'
 
 const Routes = () => (
     <BrowserRouter>

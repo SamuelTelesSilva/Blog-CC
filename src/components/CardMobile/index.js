@@ -4,6 +4,7 @@ import ButtonCard from '../ButtonCard/index';
 
 const CardMobile = () => {
     return(
+        
         <Container>
             <div className="cont-main">
                 <div className="detail-card">
