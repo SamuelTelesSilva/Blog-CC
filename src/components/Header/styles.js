@@ -49,23 +49,19 @@ export const Container = styled.div`
         align-items: center;
         height: 150px;
         max-width: 100%;
-        border: 1px solid red;
 
         .computer-science{
             display: block;
-            border: 1px solid red;
             max-width: 100%;
         }
 
         .txtcomputer{
             margin: 0px 0px -20px 70px;
-            font-size: calc(0.75em + 4vmin);
-            border: 1px solid red;
+            font-size: 40px;
         }
 
         .txtscience{
-            font-size: calc(0.75em + 20vmin);
-            border: 1px solid red;
+            font-size: 80px;
         }
 
         .txtscience, .txtcomputer, span{
@@ -85,6 +81,16 @@ export const Container = styled.div`
 
         .logo{
             display: none;
+        }
+    }
+
+    @media screen and (max-width: 300px){
+        .txtcomputer{
+            font-size: 30px;
+        }
+
+        .txtscience{
+            font-size: 60px;
         }
     }
 `;
