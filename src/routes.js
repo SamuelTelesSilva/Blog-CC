@@ -4,6 +4,7 @@ import Card from './components/Cards/Card';
 import NavBar from './components/NavBar/Toolbar';
 import SideDrawer from './components/NavBar/SideDrawer'
 import Footer from './components/Footer/index';
+import Header from './components/Header/index';
 
 const Routes = () => (
     <BrowserRouter>
@@ -12,6 +13,7 @@ const Routes = () => (
             <Route path="/nav" component={ NavBar } />
             <Route path="/men" component={ SideDrawer } />
             <Route path="/footer" component={ Footer } />
+            <Route path="/header" component={ Header } />
         </Switch>
     </BrowserRouter> 
 );
