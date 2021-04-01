@@ -6,6 +6,7 @@ export const Container = styled.div`
     width: 100%;
     max-width: 900px;
     background-color: #FFFFFF;
+    max-height: 200px;
 
     .card-text-detail{
         display: inline-block;

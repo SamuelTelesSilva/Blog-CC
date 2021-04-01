@@ -2,11 +2,15 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     display: flex;
+    grid-area: F;
     width: 100%;
     height: 80px;
     background-color: var(--colorMain);
     justify-content: center;
     align-items: center;
+
+
+    bottom: 0;
 
     .copyright{
 

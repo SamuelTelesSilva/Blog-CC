@@ -2,11 +2,18 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     display: flex;
+    grid-area: NB;
     width: 100%;
     height: 53px;
     background-color: var(--colorMain);
     justify-content: space-between;
     align-items: center;
+
+    
+
+    @media screen and (min-width: 768px){
+        position: fixed;
+    } 
 `;
 
 export const Button = styled.button`

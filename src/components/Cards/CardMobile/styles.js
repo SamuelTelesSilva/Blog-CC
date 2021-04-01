@@ -5,6 +5,7 @@ export const Container = styled.div`
     border: 2px solid var(--colorMain);
     border-radius: 5px;
     background-color: #FFFFFF;
+    max-height: 400px;
 
     .cont-main{
         display: flex;

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
 
     display: flex;
+    grid-area: H;
     justify-content: center;
     align-items: center;
     height: 500px;
@@ -56,7 +57,7 @@ export const Container = styled.div`
         }
 
         .txtcomputer{
-            margin: 0px 0px -20px 70px;
+            margin: 0px 0px -20px 100px;
             font-size: 40px;
         }
 
