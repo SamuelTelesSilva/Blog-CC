@@ -5,9 +5,9 @@ export const Container = styled.div`
     grid-area: BM;
     width: 100%;
     height: 30px;
-
+    justify-content: center;
+    
     span{
-
         font-family: Righteous;
         font-style: normal;
         font-weight: normal;

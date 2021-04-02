@@ -8,9 +8,8 @@ export const Container = styled.div`
     background-color: var(--colorMain);
     justify-content: center;
     align-items: center;
-
-
     bottom: 0;
+
 
     .copyright{
 

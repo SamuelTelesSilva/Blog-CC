@@ -4,7 +4,7 @@ import NavBar from '../../components/NavBar/Toolbar';
 import Header from '../../components/Header/index';
 import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
-import Card from '../../components/Cards/CardMobile/index';
+import Card from '../../components/Cards/Card/index';
 
 const Home = () => {
     return(
@@ -13,7 +13,13 @@ const Home = () => {
             <Header />
             <MainToolbar title="Pesquisas"/>
             <Main>
-                Conteudo
+                <div className="container-main">
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                </div>
             </Main>
             <Footer />
         </Grid>

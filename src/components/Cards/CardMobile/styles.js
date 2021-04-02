@@ -5,8 +5,11 @@ export const Container = styled.div`
     border: 2px solid var(--colorMain);
     border-radius: 5px;
     background-color: #FFFFFF;
-    max-height: 400px;
+    height: 340px;
+    width: 100%;
+    max-width: 500px;
 
+    margin: 10px 0px 10px 0px;
     .cont-main{
         display: flex;
     }
@@ -18,11 +21,11 @@ export const Container = styled.div`
         margin: 0px 5px 0px 5px;
 
         .title-card{
-            font-style: normal;
-            font-weight: normal;
+            
             font-size: 17px;
-            line-height: 23px;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            font-family: 'Righteous', cursive;
+        color: var(--colorMain);
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.20);
         }
         .img-card{
             width:100%;
@@ -35,7 +38,7 @@ export const Container = styled.div`
 
     .author-date{
         display: block;
-        width: 50%;
+        
         margin: 21px 0px 0px 0px;
         font-size: 15px;
 
@@ -53,13 +56,11 @@ export const Container = styled.div`
     }
 
     .desc-card{
-        display: inline-block;
+        display: block;
         display: -webkit-box;
-        margin-top: 5px;
         overflow: hidden;
         -webkit-line-clamp: 7;
         -webkit-box-orient: vertical;  
-        max-height: 9em;
-        margin: 5px;
+        margin: 5px 0px 0px 5px;
     }
 `;

@@ -29,20 +29,8 @@ export const Grid =  styled.div`
 `;
 
 export const Main =  styled.div`
-    display: flex;
     grid-area: M;
+    display: flex;
     width: 100%;
     justify-content: center;
-    background: white;
-
-    .cont-main{
-        display: block;
-        
-        margin-top: 10px;
-        margin-bottom: 20px;
-
-        div{
-            margin-bottom: 20px;
-        }
-    }
 `;

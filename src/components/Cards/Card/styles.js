@@ -3,10 +3,13 @@ import styled from 'styled-components';
 export const Container = styled.div`
     border: 2px solid var(--colorMain);
     border-radius: 5px;
+
     width: 100%;
     max-width: 900px;
+    height: 190px;
     background-color: #FFFFFF;
-    max-height: 200px;
+    
+    margin: 10px 0px 10px 0px;
 
     .card-text-detail{
         display: inline-block;
@@ -17,7 +20,6 @@ export const Container = styled.div`
         -webkit-line-clamp: 8;
         -webkit-box-orient: vertical;  
         max-height: 10em;
-        
     }
 
     @media screen and (max-width: 768px){
@@ -31,18 +33,15 @@ export const CardMain = styled.div`
     
     .card-title{
         margin-bottom: 5px;
-        font-style: normal;
-        font-weight: normal;
         font-size: 20px;
-        line-height: 23px;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        
+        font-family: 'Righteous', cursive;
+        color: var(--colorMain);
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.20);
     }
     .card-img-detail{
         border: 1px solid blue;
         width: 250px;
         height: 150px;
-        
     }
 
     @media screen and (max-width: 768px){
