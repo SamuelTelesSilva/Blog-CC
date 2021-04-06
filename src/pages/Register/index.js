@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Main, FormLogin } from './styles';
+import { Grid, Main, FormRegister } from './styles';
 import NavBar from '../../components/NavBar/Toolbar';
 import Header from '../../components/Header/index';
 import MainToolbar from '../../components/MainToolbar/index';
@@ -13,7 +13,7 @@ const Register = () => {
             <Header />
             <MainToolbar title="Cadastre-se"/>
             <Main>
-                <FormLogin>
+                <FormRegister>
                     <div className="input-area">
                         <div className="input-area-register">
                             <div className="area-span-register">
@@ -43,7 +43,7 @@ const Register = () => {
                         <div className="button-cad"><Button title="Cadastrar"/></div>
                         <div className="button-login"><Button title="Login"/></div>
                     </div>
-                </FormLogin>
+                </FormRegister>
             </Main>
             <Footer />
         </Grid>

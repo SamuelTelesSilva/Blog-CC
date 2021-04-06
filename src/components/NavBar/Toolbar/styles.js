@@ -13,6 +13,7 @@ export const Container = styled.div`
 
     @media screen and (min-width: 768px){
         position: fixed;
+        z-index: 200;
     } 
 `;
 

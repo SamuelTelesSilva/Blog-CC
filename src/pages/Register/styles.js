@@ -40,7 +40,7 @@ export const Main = styled.div`
     }
 `;
 
-export const FormLogin = styled.div`
+export const FormRegister = styled.div`
     display: block;
     margin-top: 15px;
     width: 700px;
