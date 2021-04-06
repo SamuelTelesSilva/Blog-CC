@@ -6,18 +6,26 @@ import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
 import Button from '../../components/Button/index';
 
-const Login = () => {
+const Register = () => {
     return(
         <Grid>
             <NavBar />
             <Header />
-            <MainToolbar title="Login"/>
+            <MainToolbar title="Cadastre-se"/>
             <Main>
                 <FormLogin>
                     <div className="input-area">
-                        <div className="input-area-login">
-                            <div className="area-span-login">
-                                <span>Login:</span>
+                        <div className="input-area-register">
+                            <div className="area-span-register">
+                                <span>Nome:</span>
+                            </div>
+                            <input className="input-nome" type="name" placeholder="Digite o seu nome"/>
+                        </div>
+                    </div>
+                    <div className="input-area">
+                        <div className="input-area-register">
+                            <div className="area-span-register">
+                                <span>E-mail:</span>
                             </div>
                             <input className="input-email" type="email" placeholder="Digite o seu e-mail"/>
                         </div>
@@ -30,9 +38,10 @@ const Login = () => {
                             <input className="input-password" type="password" placeholder="Digite a sua senha"/>
                         </div>
                     </div>
+
                     <div className="button-area">
-                        <div className="button-login"><Button title="Logar"/></div>
-                        <div className="button-cad"><Button title="Cadastre-se"/></div>
+                        <div className="button-cad"><Button title="Cadastrar"/></div>
+                        <div className="button-login"><Button title="Login"/></div>
                     </div>
                 </FormLogin>
             </Main>
@@ -40,4 +49,4 @@ const Login = () => {
         </Grid>
     );
 }
-export default Login;
+export default Register;

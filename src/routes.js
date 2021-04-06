@@ -8,6 +8,7 @@ import Header from './components/Header/index';
 import Home from './pages/Home/index';
 import CardM from './components/Cards/CardMobile/index';
 import Login from './pages/Login/index';
+import Register from './pages/Register/index';
 
 const Routes = () => (
     <BrowserRouter>
@@ -20,6 +21,7 @@ const Routes = () => (
             <Route path="/card" component={ Card } />
             <Route path="/cardm" component={ CardM } />
             <Route path="/login" component={ Login } />
+            <Route path="/register" component={ Register } />
         </Switch>
     </BrowserRouter> 
 );

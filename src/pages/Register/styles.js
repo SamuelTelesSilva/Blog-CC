@@ -43,13 +43,17 @@ export const Main = styled.div`
 export const FormLogin = styled.div`
     display: block;
     margin-top: 15px;
+    width: 700px;
+
 
     .input-area {
-        display: flex;
+        display: flex;       
         margin: 3px;
 
-        .input-area-login, .input-area-password{
+        .input-area-register, .input-area-password{
             display: flex;
+            width: 100%;
+            justify-content: center;
         }
 
         input{
@@ -57,11 +61,9 @@ export const FormLogin = styled.div`
             border: 2px solid var(--colorMain);
             border-radius: 5px;
             padding: 12px;
-            min-width: 100%;
-            max-width: 350px; 
+            width: 350px; 
             height: 40px;
         }
-        
         span{
             font-family: Righteous;
             font-style: normal;
@@ -71,6 +73,9 @@ export const FormLogin = styled.div`
             text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
         .input-email{
+            margin-left: 44px;
+        }
+        .input-nome{
             margin-left: 52px;
         }
     }
@@ -78,10 +83,13 @@ export const FormLogin = styled.div`
     .button-area{
         display: flex;
         margin-top: 40px;
+        justify-content: center;
 
-        .button-login{
-            margin: 0px 20px 0px 0px;
+
+        .button-login, .button-cad{
+            margin: 0px 0px 0px 10px;
         }
+
     }
         
     @media screen and (max-width: 768px){
@@ -93,9 +101,10 @@ export const FormLogin = styled.div`
             margin-left: 0px;
             width: 100%;
             justify-content: center;
+            
 
 
-            .input-area-login, .input-area-password{
+            .input-area-register, .input-area-password{
                 display: block;
                 width: 100%;
 
@@ -109,7 +118,7 @@ export const FormLogin = styled.div`
                     margin-left: 0px;
                 }
 
-                .area-span-login, .area-span-password{
+                .area-span-register, .area-span-password{
                     display: flex;
                     justify-content: center;
                     
@@ -119,10 +128,9 @@ export const FormLogin = styled.div`
 
         .button-area{
             margin: 10px 0px 0px 0px;
-            justify-content: center;
-
+            
             .button-login{
-                margin: 0px 10px 0px 0px;
+                margin: 0px 0px 0px 10px;
             }
         }
 
