@@ -10,12 +10,18 @@ import 'suneditor/dist/css/suneditor.min.css';
 
 
 const Post = () => {
+
     const editorRef = useRef();
     useEffect(() => {
         // Get underlining core object here
         // Notice that useEffect is been used because you have to make sure the editor is rendered.
-        console.log(editorRef.current.editor.core);
+        console.log("ref" + editorRef.current.editor.getText());
     }, []);
+
+    const handleChange = (content) => {
+        console.log(content);
+    }
+
     return(
         <Grid>
             <NavBar />
@@ -38,6 +44,8 @@ const Post = () => {
                     <div className="editor-post">
                         <SunEditor 
                             ref={editorRef}
+                            name="my-editor"
+                            onChange={handleChange}
                             width="100%"
                             height="400"
                             enableToolbar={true}
