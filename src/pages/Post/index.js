@@ -1,26 +1,46 @@
-import React, { useRef, useEffect } from 'react';
+import React, {useState, useRef, useEffect } from 'react';
 import { Grid, Main} from './styles';
 import NavBar from '../../components/NavBar/Toolbar';
 import Header from '../../components/Header/index';
 import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
-import Button from '../../components/Button/index';
 import SunEditor from 'suneditor-react';
 import 'suneditor/dist/css/suneditor.min.css';
-
+import { useAuth } from '../../providers/auth';
 
 const Post = () => {
+    const [imgData, setImgData] = useState(null);
 
-    const editorRef = useRef();
+    
+
+    //const {} = useAuth();
+
+    /*const editorRef = useRef();
     useEffect(() => {
         // Get underlining core object here
         // Notice that useEffect is been used because you have to make sure the editor is rendered.
         console.log("ref" + editorRef.current.editor.getText());
     }, []);
-
+    */
+    //Pegando todo conteudo do api
     const handleChange = (content) => {
-        console.log(content);
+        //console.log(content);
     }
+
+    //Capturando a img
+    const handleImageUpload = (targetImgElement, index, state, imageInfo, remainingFilesCount) => {
+        setImgData(imageInfo.src)
+    }
+    console.log(imgData)
+
+    //pegar a imagem é o imageInfo.src
+
+    /*
+    const handleImageUploadBefore = (files, info, uploadHandler) => {
+        console.log(files, info, uploadHandler)
+    }
+    */
+
 
     return(
         <Grid>
@@ -43,9 +63,10 @@ const Post = () => {
                     </div>
                     <div className="editor-post">
                         <SunEditor 
-                            ref={editorRef}
+                            //ref={editorRef}
                             name="my-editor"
                             onChange={handleChange}
+                            onImageUpload={handleImageUpload}
                             width="100%"
                             height="400"
                             enableToolbar={true}

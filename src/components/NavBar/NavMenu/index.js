@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container} from './styles';
-
+import { Link } from 'react-router-dom';
 const NavMenu = (props) => {
 
     return(
@@ -15,9 +15,21 @@ const NavMenu = (props) => {
             displayNavMenu={props.displayNavMenu}
         >
             <ul>
-                <li>Login</li>
-                <li>Cadastro</li>
-                <li className="li-publicar">Publicar</li>
+                <li>
+                    <Link to={`/login`}>
+                        Login
+                    </Link>
+                </li>
+                <li>
+                    <Link to={`/register`}>
+                        Cadastro
+                    </Link>
+                </li>
+                <li className="li-publicar">
+                    <Link to={`/post`}>
+                        Publicar
+                    </Link>
+                </li>
             </ul>
         </Container>
     );

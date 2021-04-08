@@ -8,27 +8,30 @@ export const Container = styled.nav`
         display: ${props => props.block || "flex"};
 	    width: ${props => props.widthUl || "100%"};
         margin-right: ${props => props.mRight || "0px"};
+        list-style: none;
     }
 
     li{
-        display: flex;
-        list-style: none;
-        margin-left: ${props => props.mLeftLi || "0px"};
-        font-family: Righteous;
+        a {
+            display: flex;
+            text-decoration: none;
+            list-style: none;
+            margin-left: ${props => props.mLeftLi || "0px"};
+            font-family: Righteous;
 
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 22px;
-        color: #FFFFFF;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 22px;
+            color: #FFFFFF;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-        width: ${props => props.widthLi || "80px"};
-        height: 40px;
-        justify-content: center;
-        align-items:  center;
-
-
+            width: ${props => props.widthLi || "80px"};
+            height: 40px;
+            justify-content: center;
+            align-items:  center;
+        }
+        
         :hover{
             cursor: pointer;            
         }
@@ -42,7 +45,7 @@ export const Container = styled.nav`
     .li-publicar{
         
         margin-left: ${props => props.mLeft || "0px"};
-        width: ${props => props.widthLiPublicar || "90px"};
+        width: ${props => props.widthLiPublicar || "100px"};
         height: 40px;
         justify-content: center;
         align-items: center;

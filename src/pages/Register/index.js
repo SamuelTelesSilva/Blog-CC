@@ -5,6 +5,7 @@ import Header from '../../components/Header/index';
 import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
 import Button from '../../components/Button/index';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     return(
@@ -40,8 +41,14 @@ const Register = () => {
                     </div>
 
                     <div className="button-area">
-                        <div className="button-cad"><Button title="Cadastrar"/></div>
-                        <div className="button-login"><Button title="Login"/></div>
+                        <div className="button-cad">
+                            <Button title="Cadastrar"/>
+                        </div>
+                        <div className="button-login">
+                            <Link to={`/login`} style={{textDecoration: 'none'}}>
+                                <Button title="Login"/>
+                            </Link>
+                        </div>
                     </div>
                 </FormRegister>
             </Main>
