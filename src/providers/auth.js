@@ -25,6 +25,7 @@ export const AuthProvider = (props) =>{
     }, [])
 
     async function handleLogin(){
+        console.log("Foi clicado");
         try{
             const data = {
                 username:loginInput.username,
