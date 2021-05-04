@@ -4,7 +4,7 @@ import NavBar from '../../components/NavBar/Toolbar';
 import Header from '../../components/Header/index';
 import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
-import { useAuth } from '../../providers/auth';
+
 
 const Detail = () => {
     //const {conteudo} = useAuth();

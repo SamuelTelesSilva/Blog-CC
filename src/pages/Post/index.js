@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect } from 'react';
+import React, {useState } from 'react';
 import { Grid, Main} from './styles';
 import NavBar from '../../components/NavBar/Toolbar';
 import Header from '../../components/Header/index';
@@ -6,10 +6,10 @@ import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
 import SunEditor from 'suneditor-react';
 import 'suneditor/dist/css/suneditor.min.css';
-import { useAuth } from '../../providers/auth';
+
 
 const Post = () => {
-    const [imgData, setImgData] = useState(null);
+    const [imgData, setImgData] = useState([]);
 
     
 

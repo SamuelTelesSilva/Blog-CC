@@ -29,9 +29,7 @@ export const Container = styled.div`
         }
 
         @media screen and (max-width: 280px){
-            .copyright-info{
-                font-size: 11px;
-            }
+            font-size: 11px;
         }
     }
 

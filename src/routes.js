@@ -1,5 +1,6 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
+
 import Card from './components/Cards/Card';
 import NavBar from './components/NavBar/Toolbar';
 import SideDrawer from './components/NavBar/SideDrawer'
@@ -12,21 +13,39 @@ import Register from './pages/Register/index';
 import Post from './pages/Post/index';
 import Detail from './pages/Detail';
 
+import {useAuth} from './providers/auth';
+
+
+function CustomRoute({ isPrivate, ...rest}){
+
+    const { loading, authenticated } = useAuth();
+
+    if(loading){
+        return <h1>Loading...</h1>;
+    }
+
+    if(isPrivate && !authenticated){
+        return <Redirect to="/login" />
+    }
+
+    return <Route {...rest} />
+}
+
 const Routes = () => (
-    <BrowserRouter>
-        <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/nav" component={ NavBar } />
-            <Route path="/men" component={ SideDrawer } />
-            <Route path="/footer" component={ Footer } />
-            <Route path="/header" component={ Header } />
-            <Route path="/card" component={ Card } />
-            <Route path="/cardm" component={ CardM } />
-            <Route path="/login" component={ Login } />
-            <Route path="/register" component={ Register } />
-            <Route path="/post" component={ Post } />
-            <Route path="/detail" component={ Detail } />
-        </Switch>
-    </BrowserRouter> 
+    
+    <Switch>
+        <CustomRoute exact path="/" component={Home} />
+        <CustomRoute path="/nav" component={ NavBar } />
+        <CustomRoute path="/men" component={ SideDrawer } />
+        <CustomRoute path="/footer" component={ Footer } />
+        <CustomRoute path="/header" component={ Header } />
+        <CustomRoute path="/card" component={ Card } />
+        <CustomRoute path="/cardm" component={ CardM } />
+        <CustomRoute path="/login" component={ Login } />
+        <CustomRoute path="/register" component={ Register } />        
+        <CustomRoute path="/detail" component={ Detail } />
+        <CustomRoute isPrivate path="/post" component={ Post } />
+    </Switch>
+    
 );
 export default Routes;

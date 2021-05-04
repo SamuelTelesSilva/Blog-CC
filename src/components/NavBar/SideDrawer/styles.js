@@ -7,9 +7,8 @@ export const Container = styled.div`
         width:70%;
         max-width: 300px;
         height: 100%;
-        
-        background-color: #190101;
-        position: absolute;
+        background-color: #111;
+        position: fixed;
         z-index: 200;
         transform: translateX(-100%);
         transition: transform 0.3s ease-out;
