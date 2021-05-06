@@ -4,7 +4,7 @@ export const Container = styled.div`
     display: block;
     width: 100%;
     border: 2px solid #8257E6;
-    border-radius: 5px;
+    border-radius: 7px;
     background: #FFFFFF;
 
 
@@ -80,7 +80,6 @@ export const Container = styled.div`
 
         .area-img{
             grid-area: imagem;
-            border-radius: 0px;
             margin-left: 5px;
 
         }

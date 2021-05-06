@@ -41,7 +41,7 @@ const Routes = () => (
         <CustomRoute path="/card" component={ Card } />
         <CustomRoute path="/login" component={ Login } />
         <CustomRoute path="/register" component={ Register } />        
-        <CustomRoute path="/detail" component={ Detail } />
+        <CustomRoute path="/post/1" component={ Detail } />
         <CustomRoute isPrivate path="/post" component={ Post } />
     </Switch>
     
