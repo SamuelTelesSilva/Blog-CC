@@ -10,11 +10,13 @@ import 'suneditor/dist/css/suneditor.min.css';
 import api from '../../service/api';
 import useWindowDimensions from '../../components/useWindowDimensions/index';
 
+import axios from 'axios';
 
 const Post = () => {
     const { width } = useWindowDimensions();
     const [postContent, setPostContent] = useState();
-    
+    const [picture, setPicture] = useState(null);
+    const [imgData, setImgData] = useState(null);
     const [postInput, setPostInput] = useState({
         titulo: '',
         autor: '',
@@ -22,6 +24,18 @@ const Post = () => {
         data: '',
         descricao: ''
     });
+
+    const onChangePicture = e => {    
+        if (e.target.files[0]) {
+          setPicture(e.target.files[0]);
+          const reader = new FileReader();
+          reader.addEventListener("load", () => {
+            setImgData(reader.result);
+          });
+          reader.readAsDataURL(e.target.files[0]);
+        }
+    };
+
 
     const changeValue = (e) => {
         const auxPost = { ...postInput };
@@ -46,19 +60,32 @@ const Post = () => {
     var brData = postInput.data.split('-').reverse().join('/');
 
     async function handleSubmit(){
-        const data = {
-            titulo:postInput.titulo,
-            autor:postInput.autor,
-            conteudo:postContent,
-            data: brData,
-            descricao: postInput.descricao
-        }
-
         //Passando o token para a api
         api.defaults.headers.common.Authorization = `Bearer ${JSON.parse(token)}`;
 
-        const response = await api.post('/api/post', data);
-        console.log(response);
+        //variavel response para pegar o link enviado do post do firebase
+        let response=null;
+
+
+        axios.all([
+            response = await api.post(`/api/post/img/upload`, {
+                fileName: picture.name,
+                mimeType: "image/png",
+                base64: imgData.substr(22)
+            }),
+            api.post(`/api/post`, {
+                titulo:postInput.titulo,
+                autor:postInput.autor,
+                conteudo:postContent,
+                data: brData,
+                descricao: postInput.descricao,
+                url_img: response.data.url
+            })
+          ])
+          .then(axios.spread((data1, data2) => {
+                //Aqui posso pegar os dados que foi enviado do post como resposta
+                //console.log('data1', data1, 'data2', data2)
+        }));
     }
 
     return(
@@ -114,6 +141,14 @@ const Post = () => {
                             name="data"
                             value={postInput.data}
                             onChange={changeValue}/>
+                    </div>
+                    <div className="cont-editor-img">
+                        <input
+                            type="file"
+                            className="input-file"
+                            name="fileCapa"
+                            accept="image/png"
+                            onChange={onChangePicture}/>
                     </div>
                     
                     <div className="editor-post">

@@ -7,13 +7,13 @@ const Card = (props) => {
 
     let descricao = props.descricao;
     
-
-
     return (
         <Container>
             <div className="area-title">{props.titulo}</div>
             
-                <div className="area-img">img</div>
+                <div className="area-img">
+                    <img src={props.imgPost} alt={props.imgPost}/>
+                </div>
                 <div className="area-info">
                     <div><span>Autor:</span> {props.autor}</div>
                     <div><span>Data:</span> {props.data}</div>

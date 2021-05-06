@@ -5,7 +5,7 @@ import Header from '../../components/Header/index';
 import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
 import Card from '../../components/Card/index';
-
+import Paginacao from '../../components/Paginacao';
 import axios from 'axios';
 
 
@@ -32,7 +32,6 @@ const Home = () => {
         setPaginaAtual(value-1);
     };
 
-
     return(
         <Grid>
             <NavBar />
@@ -48,10 +47,14 @@ const Home = () => {
                                 conteudo={post.conteudo}
                                 autor={post.autor}
                                 data={post.data}   
-                                descricao={post.descricao}                            
+                                descricao={post.descricao}
+                                imgPost={post.url_img}                            
                             />
                         </div>
                     ))}
+                </div>
+                <div className="cont-paginacao">
+                    <Paginacao count={pages} onchange={handleChange}/>
                 </div>
             </Main>
             <Footer />

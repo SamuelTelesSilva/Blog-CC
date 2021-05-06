@@ -21,12 +21,19 @@ export const Container = styled.div`
 
     .area-img{
         max-width: 450px;
+        height: 210px;
         width: 100%;
-        height: 180px;
-        background-color: orange;
-        border-radius: 10px;
-    }
+        
+        margin: 0px;
+        border-radius: 15px 15px 0px 0px;
 
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 15px 15px 0px 0px;
+        }
+    }
+    
     .area-info{
         display: block;
         width: 100%;
