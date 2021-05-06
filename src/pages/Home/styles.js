@@ -33,4 +33,9 @@ export const Main =  styled.div`
     display: flex;
     width: 100%;
     justify-content: center;
+
+
+    .aux-card{
+        margin-bottom: 10px;
+    }
 `;

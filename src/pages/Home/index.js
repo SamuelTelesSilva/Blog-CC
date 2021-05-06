@@ -4,7 +4,7 @@ import NavBar from '../../components/NavBar/Toolbar';
 import Header from '../../components/Header/index';
 import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
-//import Card from '../../components/Cards/Card/index';
+import Card from '../../components/Card/index';
 
 import axios from 'axios';
 
@@ -41,7 +41,12 @@ const Home = () => {
                 <div className="container-main">
                     {post.map((post) => (
                         <div className="aux-card" key={post.id}>
-                            
+                            <Card 
+                                titulo={post.titulo}
+                                conteudo={post.conteudo}
+                                autor={post.autor}
+                                data={post.autor}                               
+                            />
                         </div>
                     ))}
                 </div>
