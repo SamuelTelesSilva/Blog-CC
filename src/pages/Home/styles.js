@@ -38,4 +38,10 @@ export const Main =  styled.div`
     .aux-card{
         margin-bottom: 10px;
     }
+
+    .cont-paginacao{
+        display: flex;
+        width: 100%;
+        margin: 15px 0px 25px 0px;
+    }
 `;

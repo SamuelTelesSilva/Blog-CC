@@ -15,7 +15,7 @@ const Home = () => {
     const [pages, setPages] = useState();
     const [paginaAtual, setPaginaAtual] = useState(0);
     const [total, setTotal] = useState(0);
-    const limit = 50;
+    const limit = 1;
 
     useEffect(()=>{
         axios.get(`http://localhost:8080/api/post?size=${limit}&page=${paginaAtual}`)
@@ -52,10 +52,11 @@ const Home = () => {
                             />
                         </div>
                     ))}
+                    <div className="cont-paginacao">
+                        <Paginacao count={pages} onchange={handleChange}/>
+                    </div>
                 </div>
-                <div className="cont-paginacao">
-                    <Paginacao count={pages} onchange={handleChange}/>
-                </div>
+                
             </Main>
             <Footer />
         </Grid>
