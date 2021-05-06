@@ -10,7 +10,7 @@ export const Container = styled.div`
         background-color: #111;
         position: fixed;
         z-index: 200;
-        transform: translateX(-100%);
+        transform: translateX(-110%);
         transition: transform 0.3s ease-out;
         color: white;
         top: 0;

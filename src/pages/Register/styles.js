@@ -31,110 +31,99 @@ export const Main = styled.div`
     display: flex;
     width: 100%;
     justify-content: center;
+    align-items: center;
     min-height: 500px;
-
-
+    
     @media screen and (max-width: 768px){
-        justify-content: start;
-        align-items: center;
+        justify-content: start;  
+        min-height: auto;
     }
 `;
 
 export const FormRegister = styled.div`
     display: block;
-    margin-top: 15px;
-    width: 700px;
+    width: 600px;
+    
+    .area-input{
 
-
-    .input-area {
-        display: flex;       
-        margin: 3px;
-
-        .input-area-register, .input-area-password{
+        .area-title-input{
             display: flex;
-            width: 100%;
             justify-content: center;
+            width: 100%;
         }
-
-        input{
-            margin: 0px 0px 0px 10px;
-            border: 2px solid var(--colorMain);
-            border-radius: 5px;
-            padding: 12px;
-            width: 350px; 
-            height: 40px;
-        }
-        span{
+        .title-input{
             font-family: Righteous;
             font-style: normal;
             font-weight: normal;
             font-size: 20px;
+            line-height: 20px;
             color: #8257E6;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
-        .input-email{
-            margin-left: 44px;
-        }
-        .input-nome{
-            margin-left: 52px;
+
+        input{
+            width:100%;
+            height: 35px;
+            border-radius: 5px;
+            border: 2px solid #8257E6;
+            padding: 0px 0px 0px 10px;
         }
     }
-    
-    .button-area{
+
+    .area-button{
         display: flex;
-        margin-top: 40px;
         justify-content: center;
+        align-items: center;
+        height: 50px;
 
-
-        .button-login, .button-cad{
-            margin: 0px 0px 0px 10px;
+        .button-login{
+            margin-right: 10px;
         }
 
-    }
-        
-    @media screen and (max-width: 768px){
-        margin-top: 10px;
-        width: 100%;
-
-        .input-area {
+        .button-input{
             display: flex;
-            margin-left: 0px;
-            width: 100%;
+            width: 200px;
+            height: 40px;
+            background: var(--colorMain);
+            color: white;
             justify-content: center;
+            align-items: center;
+            border-radius: 6px;
+            font-size: 16px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             
-
-
-            .input-area-register, .input-area-password{
-                display: block;
-                width: 100%;
-
-                input{
-                    margin: 0px;
-                    min-width: 100%;
-                    max-width: 350px;  
-                }
-
-                .input-email{
-                    margin-left: 0px;
-                }
-
-                .area-span-register, .area-span-password{
-                    display: flex;
-                    justify-content: center;
-                    
-                }
-            }
-        }
-
-        .button-area{
-            margin: 10px 0px 0px 0px;
-            
-            .button-login{
-                margin: 0px 0px 0px 10px;
+            :hover{
+                cursor: pointer;
             }
         }
 
     }
 
+    @media screen and (max-width: 768px){
+        width: 100%;
+        margin-bottom: 10%;
 
+        .area-input{
+            input{
+                width:100%;
+            }
+        }
+
+        .area-button{
+            display: block;
+            height: auto;
+
+            .button-login{
+                margin: 20px 0px 0px 0px;
+            }
+            .button-register{
+                margin-top: 5px;
+            }
+
+            .button-input{
+                width: 100%;
+                height: 35px;
+            }
+        }
+        
+    }
 `;

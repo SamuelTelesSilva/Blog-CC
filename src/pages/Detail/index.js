@@ -20,20 +20,7 @@ const Detail = () => {
             <MainToolbar title={titleContext}/>
             <Main>
                 <PostDetail>
-                    <div className="cont-author-date">
-                        <div className="author">
-                            <span>Autor:</span>
-                            Samuel
-                        </div>
-                        <div className="date">
-                            <span>Data:</span>
-                            15/03/2021
-                        </div>
-                    </div>
-
-                    <div className="conteudo">
-                        {conteudo}
-                    </div>
+                    
                 </PostDetail>       
             </Main>
             <Footer />

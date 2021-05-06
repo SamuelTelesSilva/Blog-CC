@@ -86,10 +86,12 @@ export const Container = styled.div`
     }
 
     @media screen and (max-width: 300px){
+        justify-content: start;
+    
         .txtcomputer{
+            margin: 0px 0px -20px 0px;
             font-size: 30px;
         }
-
         .txtscience{
             font-size: 60px;
         }

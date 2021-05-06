@@ -7,7 +7,7 @@ export const Container = styled.div`
 export const Button = styled.div`
     display: flex;
     width: 200px;
-    height: 31px;
+    height: 40px;
     background: var(--colorMain);
     color: white;
     justify-content: center;
@@ -21,7 +21,7 @@ export const Button = styled.div`
     }
 
     @media screen and (max-width: 768px){
-        min-width: 100%;
-        max-width: 100px;
+        width: 100%;
+        height: 35px;
     } 
 `;

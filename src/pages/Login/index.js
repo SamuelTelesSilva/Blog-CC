@@ -23,40 +23,36 @@ const Login = () => {
         <Grid>
             <NavBar />
             <Header />
-            <MainToolbar title="Login"/>
+            <MainToolbar title="##"/>
             <Main>
                 <FormLogin>
-                    <div className="input-area">
-                        <div className="input-area-login">
-                            <div className="area-span-login">
-                                <span>Login:</span>
+                    <div className="area-input">
+                        <div className="area-title-input">
+                            <div className="title-input">
+                                Login
                             </div>
-                            <input 
-                                className="input-email"
-                                type="email"
-                                placeholder="Digite o seu e-mail"
-                                name="username"
-                                onChange={changeValue}
-                                value={loginInput.username}
-                            />
                         </div>
-                    </div>
-                    <div className="input-area">
-                        <div className="input-area-password">
-                            <div className="area-span-password">
-                                <span>Password:</span>
+                        <input
+                            type="email"
+                            placeholder="Digite o seu e-mail"
+                            name="username"
+                            onChange={changeValue}
+                            value={loginInput.username}
+                        />
+                        <div className="area-title-input">
+                            <div className="title-input">
+                                Senha
                             </div>
-                            <input 
-                                className="input-password"
-                                type="password" 
-                                placeholder="Digite a sua senha"
-                                name="password"
-                                onChange={changeValue}
-                                value={loginInput.password}
-                                />
                         </div>
+                        <input
+                            type="password" 
+                            placeholder="Digite a sua senha"
+                            name="password"
+                            onChange={changeValue}
+                            value={loginInput.password}     
+                        />
                     </div>
-                    <div className="button-area">
+                    <div className="area-button">
                         <div className="button-login">
                             <input className="button-input"
                                 type="submit"
@@ -64,9 +60,11 @@ const Login = () => {
                                 onClick={handleLogin}    
                             />
                         </div>
-                        <div className="button-cad">
-                            <Link to={`/register`} style={{textDecoration: 'none'}}>
-                                <Button title="Cadastre-se"/>
+                        <div className="button-register">
+                            <Link
+                                to={`/register`}
+                                style={{textDecoration: 'none'}}>
+                                    <Button title="Cadastre-se"/>
                             </Link>
                         </div>
                     </div>

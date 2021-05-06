@@ -1,13 +1,12 @@
 import React from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 
-import Card from './components/Cards/Card';
+import Card from './components/Card/index';
 import NavBar from './components/NavBar/Toolbar';
 import SideDrawer from './components/NavBar/SideDrawer'
 import Footer from './components/Footer/index';
 import Header from './components/Header/index';
 import Home from './pages/Home/index';
-import CardM from './components/Cards/CardMobile/index';
 import Login from './pages/Login/index';
 import Register from './pages/Register/index';
 import Post from './pages/Post/index';
@@ -40,7 +39,6 @@ const Routes = () => (
         <CustomRoute path="/footer" component={ Footer } />
         <CustomRoute path="/header" component={ Header } />
         <CustomRoute path="/card" component={ Card } />
-        <CustomRoute path="/cardm" component={ CardM } />
         <CustomRoute path="/login" component={ Login } />
         <CustomRoute path="/register" component={ Register } />        
         <CustomRoute path="/detail" component={ Detail } />
