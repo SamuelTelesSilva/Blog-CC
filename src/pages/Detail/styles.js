@@ -41,10 +41,6 @@ export const Main = styled.div`
     @media screen and (max-width: 768px){
         justify-content: start;
     }
-
-    @media screen and (min-width: 651px){
-        
-    }
 `;
 
 export const PostDetail = styled.div`
@@ -106,7 +102,7 @@ export const PostDetail = styled.div`
         margin: 5px 0px 15px 0px;
     }
 
-    .area-conteudo{
+    .area-descricao{
         display: block; 
         width: 100%;
         word-break: break-all; 
@@ -122,6 +118,19 @@ export const PostDetail = styled.div`
         margin: 15px 0px 15px 0px;
     }
 
+    .img-cont-button{
+        width: 100%;
+
+        /*Estou pegando o tamanho da tela que esta vindo por props*/
+        .editor-post{
+            display: block;
+            max-width: ${props => props.width ? props.width-5+"px" : "250px"};
+            
+        }
+        
+    }
+    
+
     @media screen and (min-width: 651px){
         max-width: 800px;
 
@@ -133,6 +142,13 @@ export const PostDetail = styled.div`
         .area-botao{
             display: flex;
             justify-content: center;
+        }
+
+        .editor-post{
+            display: flex;
+            margin: 20px 0px 20px 0px;
+            width: 100%;
+            max-height: 1000px;
         }
 
     }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Grid, Main, PostDetail} from './styles';
 import NavBar from '../../components/NavBar/Toolbar';
 import Header from '../../components/Header/index';
@@ -6,35 +6,63 @@ import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
 
 import Button from '../../components/Button/index';
+import { Link } from 'react-router-dom';
 
-const Detail = () => {
-    //const {conteudo} = useAuth();
-    let titleContext = 'Titulo do Post'
-    let conteudo = ''
 
+import SunEditor from 'suneditor-react';
+import 'suneditor/dist/css/suneditor.min.css';
+import useWindowDimensions from '../../components/useWindowDimensions/index';
+
+
+const Detail = (props) => {
+
+    const [post, setPost] = useState([]);
+    const { width } = useWindowDimensions();
+
+    useEffect(() => {
+        const {id} = props.match.params;
+        fetch(`http://localhost:8080/api/post/${id}`)
+        .then(post =>
+            post.json().then(post => setPost(post))
+        )
+      
+    }, [props.match.params]);
     
 
     return(
         <Grid>
             <NavBar />
             <Header />
-            <MainToolbar title={titleContext}/>
+            <MainToolbar title="##"/>
             <Main>
-                <PostDetail>
+                <PostDetail width={width}>
                     <div className="title-detail">
-                        <div className="area-title"><span>qualquer titulo sdsadasd dasasd asdasdasd </span></div>       
+                        <div className="area-title"><span>{post.titulo}</span></div>       
                         <div className="area-detalhes">
-                            <div><span>Autor:</span>Samuel</div>
-                            <div><span>Data:</span>15/03/2020</div>
+                            <div><span>Autor:</span>{post.autor}</div>
+                            <div><span>Data:</span>{post.data}</div>
                         </div>
                     </div>
                     <div className="img-cont-button">
                         <div className="area-img">Img</div>
-                        <div className="area-conteudo">
-                            dasdadasdasdddddddddddddddddddddasdasdadasdsssssssssssssssssssssssssssssssssssssssssssssssssssssss
+                        <div className="area-descricao">
+                            {post.descricao}
+                        </div>
+                        <div className="editor-post">
+                            <SunEditor 
+                                setContents={post.conteudo} 
+                                disable = {true} 
+                                enableToolbar = {false} 
+                                showToolbar = {false} 
+                                width = "100%" 
+                                height = "100%" 
+                                setOptions = {{resizingBar: false, showPathLabel: false }}
+                            />
                         </div>
                         <div className="area-botao">
-                            <Button title="Voltar"/>
+                            <Link to={`/#`} style={{ textDecoration: 'none'}}>
+                                <Button title="Voltar"/>
+                            </Link>
                         </div>
                     </div>
                 </PostDetail>

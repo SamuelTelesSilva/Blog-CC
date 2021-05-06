@@ -36,11 +36,11 @@ export const Main = styled.div`
 
     .cont-editor-post{
         display: block;
-        margin-top: 25px;
+        margin: 25px 0px 25px 0px;
         
-        width: 90%;
+        width: 800px;
 
-        .cont-editor-title,.cont-editor-autor{
+        .cont-editor-title,.cont-editor-autor, .cont-editor-data, .cont-editor-desc{
 
             span{
                 font-family: Righteous;
@@ -51,13 +51,18 @@ export const Main = styled.div`
                 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             }
 
-            .input-editor-title, .input-editor-autor{
+            .input-editor-title, .input-editor-autor, .input-editor-data, .input-editor-desc{
                 border: 2px solid var(--colorMain);
                 border-radius: 5px;
                 padding: 12px;
-                min-width: 60%;
+                min-width:100%;
                 max-width: 350px; 
                 height: 40px;
+            }
+
+            .input-editor-desc{
+                height: 60px;
+                
             }
 
         }
@@ -69,17 +74,41 @@ export const Main = styled.div`
             max-height: 1000px;
             border: 2px solid var(--colorMain);
         }
+
+        .cont-button{
+            display: flex;
+            justify-content: center;
+        }
+
+        .button-input{
+            display: flex;
+            width: 200px;
+            height: 40px;
+            background: var(--colorMain);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            border-radius: 6px;
+            font-size: 16px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            
+            :hover{
+                cursor: pointer;
+            }
+        }
     }
     
     @media screen and (max-width: 768px){
         justify-content: start;
-        align-items: center;
+        
 
         .cont-editor-post{
             width: 100%;
 
+            /*Estou pegando o tamanho da tela que esta vindo por props*/
             .editor-post{
-                width: 95%;
+                display: block;
+                max-width: ${props => props.width ? props.width-2+"px" : "250px"};
             }
         }
 

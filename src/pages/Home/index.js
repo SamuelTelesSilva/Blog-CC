@@ -8,13 +8,14 @@ import Card from '../../components/Card/index';
 
 import axios from 'axios';
 
+
 const Home = () => {
 
     const [post, setPost] = useState([]);
     const [pages, setPages] = useState();
     const [paginaAtual, setPaginaAtual] = useState(0);
     const [total, setTotal] = useState(0);
-    const limit = 5;
+    const limit = 50;
 
     useEffect(()=>{
         axios.get(`http://localhost:8080/api/post?size=${limit}&page=${paginaAtual}`)
@@ -41,11 +42,13 @@ const Home = () => {
                 <div className="container-main">
                     {post.map((post) => (
                         <div className="aux-card" key={post.id}>
-                            <Card 
+                            <Card
+                                postId={post.id} 
                                 titulo={post.titulo}
                                 conteudo={post.conteudo}
                                 autor={post.autor}
-                                data={post.autor}                               
+                                data={post.data}   
+                                descricao={post.descricao}                            
                             />
                         </div>
                     ))}

@@ -1,11 +1,11 @@
 import React from 'react';
 import {Container} from './styles';
 import Button from '../Button/index';
-
+import { Link } from 'react-router-dom';
 
 const Card = (props) => {
 
-    let conteudo = props.conteudo;
+    let descricao = props.descricao;
     
 
 
@@ -19,11 +19,13 @@ const Card = (props) => {
                     <div><span>Data:</span> {props.data}</div>
                 </div>
                 <div className="area-conteudo">
-                    { conteudo.slice(0,60) + '...' }
+                    { descricao.slice(0,60) + '...' }
                     
                 </div>
                 <div className="area-button">
-                    <Button title="Abrir"/>
+                    <Link to={`/post/${props.postId}`} style={{ textDecoration: 'none'}}>
+                        <Button title="Abrir"/>
+                    </Link>
                 </div>
             
         </Container>
