@@ -4,6 +4,7 @@ import api from '../service/api.js';
 import { getAll, createUser } from "../service/blogService";
 
 export const AuthContext = createContext({});
+
 export const AuthProvider = (props) =>{
 
     const initialContatoState = {
