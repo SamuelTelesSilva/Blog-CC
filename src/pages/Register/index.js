@@ -38,7 +38,7 @@ const Register = () => {
             senha:hash
         }
 
-        if(loginInput.email !== '' && loginInput.nomeUsuario  !== '' && loginInput.senhaUsuario.length > 2){
+        if(loginInput.emailUsuario !== '' && loginInput.nomeUsuario  !== '' && loginInput.senhaUsuario.length > 2){
             const response = await api.post('/api/blog/usuarios', data);
 
             if(response.status === 201){

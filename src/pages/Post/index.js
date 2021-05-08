@@ -7,6 +7,7 @@ import Footer from '../../components/Footer/index';
 import SunEditor from 'suneditor-react';
 import 'suneditor/dist/css/suneditor.min.css';
 
+import history from '../../history';
 import api from '../../service/api';
 import useWindowDimensions from '../../components/useWindowDimensions/index';
 
@@ -41,13 +42,11 @@ const Post = () => {
         const auxPost = { ...postInput };
         auxPost[e.target.name] = e.target.value;
         setPostInput(auxPost);
-        console.log(auxPost);
     };
 
     //Pegando todo conteudo do api
     const handleChange = (content) => {
         setPostContent(content);
-        console.log(content);
     }
 
     const token = localStorage.getItem('token');
@@ -61,32 +60,44 @@ const Post = () => {
     var brData = postInput.data.split('-').reverse().join('/');
 
     async function handleSubmit(){
+        
         //Passando o token para a api
         api.defaults.headers.common.Authorization = `Bearer ${JSON.parse(token)}`;
-
-        //variavel response para pegar o link enviado do post do firebase
         let response=null;
 
-
-        axios.all([
-            response = await api.post(`/api/post/img/upload`, {
-                fileName: picture.name,
-                mimeType: "image/png",
-                base64: imgData.substr(22)
-            }),
-            api.post(`/api/post`, {
-                titulo:postInput.titulo,
-                autor:postInput.autor,
-                conteudo:postContent,
-                data: brData,
-                descricao: postInput.descricao,
-                url_img: response.data.url
-            })
-          ])
-          .then(axios.spread((data1, data2) => {
+        if( imgData === null ||
+            postInput.titulo === ''||
+            postInput.autor === ''||
+            postInput.descricao === ''|| 
+            postInput.data === ''
+        ){
+           alert("tem que preencher todos os campos");         
+        }else{
+            axios.all([
+                response = await api.post(`/api/post/img/upload`, {
+                    fileName: picture.name,
+                    mimeType: "image/png",
+                    base64: imgData.substr(22)
+                }),
+                api.post(`/api/post`, {
+                    titulo:postInput.titulo,
+                    autor:postInput.autor,
+                    conteudo:postContent,
+                    data: brData,
+                    descricao: postInput.descricao,
+                    url_img: response.data.url
+                })
+            ])
+            .then(axios.spread((data1, data2) => {
                 //Aqui posso pegar os dados que foi enviado do post como resposta
                 //console.log('data1', data1, 'data2', data2)
-        }));
+            }));
+
+
+            alert("Cadastrado com sucesso!!");   
+            history.push('/');
+        }
+    
     }
 
     return(

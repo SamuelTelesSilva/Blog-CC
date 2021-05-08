@@ -18,16 +18,18 @@ const Detail = (props) => {
 
     const [post, setPost] = useState([]);
     const { width } = useWindowDimensions();
+    const [loading, setLoading] = useState(true);
+
+
 
     useEffect(() => {
         const {id} = props.match.params;
         fetch(`http://localhost:8080/api/post/${id}`)
         .then(post =>
-            post.json().then(post => setPost(post))
+            post.json().then(post => setPost(post))       
         )
-      
+        
     }, [props.match.params]);
-    
 
     return(
         <Grid>

@@ -25,7 +25,6 @@ export const AuthProvider = (props) =>{
     }, [])
 
     async function handleLogin(){
-        console.log("Foi clicado");
         try{
             const data = {
                 username:loginInput.username,
@@ -52,15 +51,12 @@ export const AuthProvider = (props) =>{
         }
     }
 
-
-    
     return(
         <AuthContext.Provider value={{handleLogin, loginInput, setLoginInput, authenticated, loading}}>
             {props.children}
         </AuthContext.Provider>
     );
 }
-
 
 //Esse é um custom hook
 export const useAuth = () => React.useContext(AuthContext);

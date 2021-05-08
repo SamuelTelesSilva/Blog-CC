@@ -137,7 +137,6 @@ export const PostDetail = styled.div`
         border: 1px solid var(--colorMain);
         border-radius: 3px;
         
-
         .area-img{
             max-width: 800px;
             width: 100%;
