@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import { Grid, Main, FormRegister } from './styles';
+import { Link } from 'react-router-dom';
+import { createUser } from "../../service/blogService";
 import NavBar from '../../components/NavBar/Toolbar';
 import Header from '../../components/Header/index';
 import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
 import Button from '../../components/Button/index';
-import { Link } from 'react-router-dom';
-import { createUser } from "../../service/blogService";
 import history from '../../history.js';
 
 const Register = () => {
@@ -35,8 +35,10 @@ const Register = () => {
             'senha':hash
         }
 
-        if(registerInput.emailUsuario !== '' && registerInput.nomeUsuario  !== '' && registerInput.senhaUsuario.length > 2){  
-            createUser(data)
+        if(registerInput.emailUsuario !== '' && registerInput.nomeUsuario  !== '' &&
+            registerInput.senhaUsuario.length > 2)
+        {  
+            await createUser(data)
             .then(response => {
                 if(response.status === 201){
                     alert("Cadastro efetuado com sucesso");

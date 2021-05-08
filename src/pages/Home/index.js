@@ -1,12 +1,12 @@
 import React, { useState, useEffect}  from 'react';
 import { Grid, Main} from './styles';
+import { getAll } from '../../service/blogService';
 import NavBar from '../../components/NavBar/Toolbar';
 import Header from '../../components/Header/index';
 import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
 import Card from '../../components/Card/index';
 import Paginacao from '../../components/Paginacao';
-import axios from 'axios';
 
 
 const Home = () => {
@@ -18,11 +18,14 @@ const Home = () => {
     const limit = 5;
 
     useEffect(()=>{
-        axios.get(`http://localhost:8080/api/post?size=${limit}&page=${paginaAtual}`)
-            .then((response) => {
-                setTotal(response.data['totalElements'])
-                setPost(response.data.content); 
-                setPages(response.data['totalPages']);
+        getAll(limit, paginaAtual)
+        .then((response) => {
+            setTotal(response.data['totalElements'])
+            setPost(response.data.content); 
+            setPages(response.data['totalPages']);
+
+        }).catch(e => {
+            console.log("Erro ao utilizar o getAll " + e);
         });
     }, [paginaAtual, limit, total]);
 
@@ -63,13 +66,3 @@ const Home = () => {
     );
 }
 export default Home;
-
-
-/*
-<Card 
-                                titulo={post.titulo}
-                                conteudo={post.conteudo}
-                                autor={post.autor}
-                                data={post.autor}                               
-                            />
-                             */

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Grid, Main, FormLogin } from './styles';
+import { Link } from 'react-router-dom';
+import {useAuth} from '../../providers/auth';
 import NavBar from '../../components/NavBar/Toolbar';
 import Header from '../../components/Header/index';
 import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
 import Button from '../../components/Button/index';
-import { Link } from 'react-router-dom';
-import {useAuth} from '../../providers/auth';
+
 
 
 const Login = () => {

@@ -79,7 +79,7 @@ const Post = () => {
                     mimeType: "image/png",
                     base64: imgData.substr(22)
                 }),
-                api.post(`/api/post`, {
+                await api.post(`/api/post`, {
                     titulo:postInput.titulo,
                     autor:postInput.autor,
                     conteudo:postContent,
@@ -89,15 +89,13 @@ const Post = () => {
                 })
             ])
             .then(axios.spread((data1, data2) => {
-                //Aqui posso pegar os dados que foi enviado do post como resposta
-                //console.log('data1', data1, 'data2', data2)
-            }));
-
-
-            alert("Cadastrado com sucesso!!");   
-            history.push('/');
+                alert("Cadastrado com sucesso!!");   
+                history.push('/');
+            })).catch(e => {
+                localStorage.removeItem('token');
+                history.push('/login');
+            });
         }
-    
     }
 
     return(

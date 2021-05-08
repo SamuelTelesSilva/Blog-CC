@@ -14,6 +14,7 @@ export const AuthProvider = (props) =>{
         password: ''
     });
 
+    //token
     useEffect(() =>{
         const token = localStorage.getItem('token');
     
@@ -22,7 +23,7 @@ export const AuthProvider = (props) =>{
             setAuthenticated(true);
         }
         setLoading(false);
-    }, [])
+    }, []);
 
     async function handleLogin(){
         try{
@@ -43,16 +44,20 @@ export const AuthProvider = (props) =>{
             history.push('/post');
            
         }catch(error){
-
             if(error.request.status === 401){
                 console.log('Usuario e senha invalida');
             }
-            
         }
     }
 
     return(
-        <AuthContext.Provider value={{handleLogin, loginInput, setLoginInput, authenticated, loading}}>
+        <AuthContext.Provider value={{
+            handleLogin, 
+            loginInput, 
+            setLoginInput, 
+            authenticated, 
+            loading
+        }}>
             {props.children}
         </AuthContext.Provider>
     );

@@ -20,24 +20,10 @@ export const createUser = data => {
   return http.post("/api/blog/usuarios", data);
 };
 
-/*
-const update = (id, data) => {
-  return http.put(`/contatos/${id}`, data);
-};
+// "async" - determina que o metodo sera assincrono,
+//não retorna nada imediatamente
+//"await" - determina que o app espere uma resposta de uma determinada funcao,
+// depende de retorno
 
-const remove = id => {
-  return http.delete(`/contatos/${id}`);
-};
-*/
-
-
-/*
-const blogService = {
-  getAll,
-  get,
-  create
-};
-
-export default blogService;
-
-*/
+//"Future - promises" determina que uma funcaoo vai retornar algo no futuro
+//ou seja, levara um tempo para ser finalizado

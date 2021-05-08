@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import { Grid, Main, PostDetail} from './styles';
+import { getById } from '../../service/blogService';
+import { Link } from 'react-router-dom';
 import NavBar from '../../components/NavBar/Toolbar';
 import Header from '../../components/Header/index';
 import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
 import Button from '../../components/Button/index';
-import { Link } from 'react-router-dom';
 import SunEditor from 'suneditor-react';
-import { getById } from '../../service/blogService';
-import 'suneditor/dist/css/suneditor.min.css';
 import useWindowDimensions from '../../components/useWindowDimensions/index';
+import 'suneditor/dist/css/suneditor.min.css';
+
 
 const Detail = (props) => {
     const { width } = useWindowDimensions();
@@ -22,7 +23,7 @@ const Detail = (props) => {
             setPost(response.data);
           })
           .catch((err) => {
-            console.log("erro ao pegar o id" + err);
+            console.log("erro ao pegar o id, getById " + err);
           });
     }, [props.match.params]);
 
