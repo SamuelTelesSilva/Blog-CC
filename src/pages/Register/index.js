@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Grid, Main, FormRegister } from './styles';
 import NavBar from '../../components/NavBar/Toolbar';
 import Header from '../../components/Header/index';
@@ -6,51 +6,12 @@ import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
 import Button from '../../components/Button/index';
 import { Link } from 'react-router-dom';
-
-import history from '../../history.js';
-import api from '../../service/api';
-
+import { useAuth } from '../../providers/auth';
 
 const Register = () => {
 
-    const [loginInput, setLoginInput] = useState({
-        nomeUsuario: '',
-        emailUsuario: '',
-        senhaUsuario: ''
-    });
-
-    //gerando uma hash para a senha do usuario
-    var bcrypt = require('bcryptjs');
-    var salt = bcrypt.genSaltSync(10);
-    var hash = bcrypt.hashSync(loginInput.senhaUsuario, salt);
+    const { registerInput, handleInputChange, handleSubmit } = useAuth();
     
-    const changeValue = e => {
-        const auxRegister = { ...loginInput };
-        auxRegister[e.target.name] = e.target.value;
-        setLoginInput(auxRegister);
-    };
-    
-    async function handleSubmit(){
-
-        const data = {
-            nome:loginInput.nomeUsuario,
-            email:loginInput.emailUsuario,   
-            senha:hash
-        }
-
-        if(loginInput.emailUsuario !== '' && loginInput.nomeUsuario  !== '' && loginInput.senhaUsuario.length > 2){
-            const response = await api.post('/api/blog/usuarios', data);
-
-            if(response.status === 201){
-                alert("Cadastro efetuado com sucesso");
-                history.push('/login');      
-            }
-
-        }else{
-            alert("err")
-        }
-    }
-
     return(
         <Grid>
             <NavBar />
@@ -68,8 +29,8 @@ const Register = () => {
                             type="text"
                             placeholder="Digite o seu nome"
                             name="nomeUsuario"
-                            value={loginInput.nomeUsuario}
-                            onChange={changeValue}                            
+                            value={registerInput.nomeUsuario}
+                            onChange={handleInputChange}                            
                         />
                         <div className="area-title-input">
                             <div className="title-input">
@@ -80,8 +41,8 @@ const Register = () => {
                             type="email"
                             placeholder="Digite o seu e-mail"
                             name="emailUsuario"
-                            value={loginInput.emailUsuario}
-                            onChange={changeValue}                          
+                            value={registerInput.emailUsuario}
+                            onChange={handleInputChange}                          
                         />
                         <div className="area-title-input">
                             <div className="title-input">
@@ -92,8 +53,8 @@ const Register = () => {
                             type="password" 
                             placeholder="Digite a sua senha"
                             name="senhaUsuario"
-                            value={loginInput.senhaUsuario}
-                            onChange={changeValue}
+                            value={registerInput.senhaUsuario}
+                            onChange={handleInputChange}
                         />
                     </div>
                     <div className="area-button">

@@ -16,8 +16,8 @@ export const getById = id => {
 };
 
 
-export const create = data => {
-  return http.post("/api/post", data);
+export const createUser = data => {
+  return http.post("/api/blog/usuarios", data);
 };
 
 /*
