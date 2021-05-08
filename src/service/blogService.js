@@ -11,9 +11,10 @@ export const getAll = (limit, paginaAtual) => {
   return http.get(`/api/post?size=${limit}&page=${paginaAtual}`);
 };
 
-export const get = id => {
+export const getById = id => {
   return http.get(`/api/post/${id}`);
 };
+
 
 export const create = data => {
   return http.post("/api/post", data);

@@ -16,6 +16,7 @@ export const AuthProvider = (props) =>{
     const [post, setPost] = useState([]);
     const sizeLimit = 5;
 
+
     //login
     const [loginInput, setLoginInput] = useState({
         username: '',

@@ -6,8 +6,6 @@ import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
 import Card from '../../components/Card/index';
 import Paginacao from '../../components/Paginacao';
-
-
 import { useAuth } from '../../providers/auth';
 
 const Home = () => {

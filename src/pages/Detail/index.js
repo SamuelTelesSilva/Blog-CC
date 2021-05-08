@@ -4,30 +4,26 @@ import NavBar from '../../components/NavBar/Toolbar';
 import Header from '../../components/Header/index';
 import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
-
 import Button from '../../components/Button/index';
 import { Link } from 'react-router-dom';
-
-
 import SunEditor from 'suneditor-react';
+import { getById } from '../../service/blogService';
 import 'suneditor/dist/css/suneditor.min.css';
 import useWindowDimensions from '../../components/useWindowDimensions/index';
 
-
 const Detail = (props) => {
-
-    const [post, setPost] = useState([]);
     const { width } = useWindowDimensions();
-
-
+    const [post, setPost] = useState([]);
 
     useEffect(() => {
-        const {id} = props.match.params;
-        fetch(`http://localhost:8080/api/post/${id}`)
-        .then(post =>
-            post.json().then(post => setPost(post))       
-        )
-        
+        const { id } = props.match.params;
+        getById(id)
+          .then((response) => {
+            setPost(response.data);
+          })
+          .catch((err) => {
+            console.log("erro ao pegar o id" + err);
+          });
     }, [props.match.params]);
 
     return(
