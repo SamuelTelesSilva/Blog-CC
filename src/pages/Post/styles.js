@@ -62,16 +62,16 @@ export const Main = styled.div`
 
             .input-editor-desc{
                 height: 60px;
-                
             }
 
         }
 
         .editor-post{
-            display: flex;
+            display: block;
             margin: 20px 0px 20px 0px;
             width: 100%;
             max-height: 1000px;
+            background-color: #FAFAFA;
             border: 2px solid var(--colorMain);
         }
 
@@ -96,6 +96,14 @@ export const Main = styled.div`
                 cursor: pointer;
             }
         }
+
+        .input-file{
+            max-width: 200px;
+            min-width:100%;
+            border: 2px solid var(--colorMain);
+            border-radius: 5px; 
+            margin-top: 10px;      
+        }
     }
     
     @media screen and (max-width: 768px){
@@ -107,13 +115,14 @@ export const Main = styled.div`
 
             /*Estou pegando o tamanho da tela que esta vindo por props*/
             .editor-post{
-                display: block;
-                max-width: ${props => props.width ? props.width-2+"px" : "250px"};
+                display: flex;
+                justify-content: center;
+                max-width: ${props => props.width ? props.width+"px" : "250px"};
+            }
+
+            .cont-editor{
+                width: 80%;
             }
         }
-
-        
-        
-
     }
 `;

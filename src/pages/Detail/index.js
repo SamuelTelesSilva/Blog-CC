@@ -44,9 +44,11 @@ const Detail = (props) => {
                         </div>
                     </div>
                     <div className="img-cont-button">
-                        <div className="area-img">Img</div>
+                        <div className="area-img">
+                            <img src={post.url_img} alt={post.url_img}/>
+                        </div>
                         <div className="area-descricao">
-                            {post.descricao}
+                            <div>{post.descricao}</div>
                         </div>
                         <div className="editor-post">
                             <SunEditor 
@@ -56,6 +58,7 @@ const Detail = (props) => {
                                 showToolbar = {false} 
                                 width = "100%" 
                                 height = "100%" 
+                                
                                 setOptions = {{resizingBar: false, showPathLabel: false }}
                             />
                         </div>

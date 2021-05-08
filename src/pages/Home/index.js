@@ -15,7 +15,7 @@ const Home = () => {
     const [pages, setPages] = useState();
     const [paginaAtual, setPaginaAtual] = useState(0);
     const [total, setTotal] = useState(0);
-    const limit = 1;
+    const limit = 5;
 
     useEffect(()=>{
         axios.get(`http://localhost:8080/api/post?size=${limit}&page=${paginaAtual}`)

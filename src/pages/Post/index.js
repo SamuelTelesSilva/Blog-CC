@@ -47,6 +47,7 @@ const Post = () => {
     //Pegando todo conteudo do api
     const handleChange = (content) => {
         setPostContent(content);
+        console.log(content);
     }
 
     const token = localStorage.getItem('token');
@@ -152,24 +153,26 @@ const Post = () => {
                     </div>
                     
                     <div className="editor-post">
-                        <SunEditor 
-                            //ref={editorRef}
-                            name="conteudo"
-                            onChange={handleChange}
-                            width = "100%" 
-                            height = "600"
-                            enableToolbar={true}
-                            setOptions={{
-                                buttonList: [
-                                    // default
-                                    ['undo', 'redo'],
-                                    ['bold', 'underline', 'italic', 'list', 'align', 'font', 'fontColor', 'fontSize'],
-                                    ['table', 'link', 'image'],
-                                    ['fullScreen']
-                                ]
-                  
-                            }}    
-                        />
+                        <div className="cont-editor">
+                            <SunEditor 
+                                //ref={editorRef}
+                                name="conteudo"
+                                onChange={handleChange}
+                                width = "100%" 
+                                height = "400"
+                                enableToolbar={true}
+                                setOptions={{
+                                    buttonList: [
+                                        // default
+                                        ['undo', 'redo'],
+                                        ['bold', 'underline', 'italic', 'list', 'align', 'font', 'fontColor', 'fontSize'],
+                                        ['table', 'link', 'image'],
+                                        ['fullScreen']
+                                    ]
+                    
+                                }}    
+                            />
+                        </div>
                     </div>
                     <div className="cont-button">
                         <input
