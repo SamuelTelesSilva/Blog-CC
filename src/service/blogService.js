@@ -1,17 +1,25 @@
 import http from './api.js';
 
-const getAll = () => {
-  return http.get("/contatos");
+/**
+ * Parametro para definir o limite retornado pela API
+ * @param {*} limit 
+ * Parametro para definir qual a pagina atual da API
+ * @param {*} paginaAtual 
+ * @returns 
+ */
+export const getAll = (limit, paginaAtual) => {
+  return http.get(`/api/post?size=${limit}&page=${paginaAtual}`);
 };
 
-const get = id => {
+export const get = id => {
   return http.get(`/api/post/${id}`);
 };
 
-const create = data => {
-  return http.post("/cadastrar", data);
+export const create = data => {
+  return http.post("/api/post", data);
 };
 
+/*
 const update = (id, data) => {
   return http.put(`/contatos/${id}`, data);
 };
@@ -19,12 +27,16 @@ const update = (id, data) => {
 const remove = id => {
   return http.delete(`/contatos/${id}`);
 };
+*/
 
 
-export default {
+/*
+const blogService = {
   getAll,
   get,
-  create,
-  update,
-  remove
+  create
 };
+
+export default blogService;
+
+*/

@@ -18,7 +18,6 @@ const Detail = (props) => {
 
     const [post, setPost] = useState([]);
     const { width } = useWindowDimensions();
-    const [loading, setLoading] = useState(true);
 
 
 
