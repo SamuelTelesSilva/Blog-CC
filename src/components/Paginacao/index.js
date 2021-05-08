@@ -2,7 +2,6 @@ import React from 'react';
 import {Container} from './styles';
 import Pagination from '@material-ui/lab/Pagination';
 import { makeStyles } from "@material-ui/core/styles";
-import { useAuth } from '../../providers/auth';
 
 const useStyles = makeStyles(() => ({
     ul: {
@@ -14,16 +13,15 @@ const useStyles = makeStyles(() => ({
   
 const Paginacao = (props) => {
     const classes = useStyles();
-    const {pages, handleChange} = useAuth();
-
     return(
         <Container>
             <Pagination 
                 classes={{ ul: classes.ul }}
-                count={pages}
-                onChange={handleChange}    
+                count={props.count}
+                onChange={props.onchange}    
             />
         </Container>
+        
     );
 }
 export default Paginacao;
