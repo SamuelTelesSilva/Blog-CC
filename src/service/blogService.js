@@ -20,6 +20,8 @@ export const createUser = data => {
   return http.post("/api/blog/usuarios", data);
 };
 
+
+
 // "async" - determina que o metodo sera assincrono,
 //não retorna nada imediatamente
 //"await" - determina que o app espere uma resposta de uma determinada funcao,

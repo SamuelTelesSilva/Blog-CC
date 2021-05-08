@@ -8,6 +8,8 @@ export const AuthProvider = (props) =>{
 
     const [authenticated, setAuthenticated] = useState(false);
     const [loading, setLoading] = useState(true);
+    const [autorPost, setAutorPost] = useState("");
+    
 
     const [loginInput, setLoginInput] = useState({
         username: '',
@@ -37,7 +39,7 @@ export const AuthProvider = (props) =>{
             api.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
 
             //Capturar os dados do usuario
-            console.log(response.data);
+            setAutorPost(response.data.nome);
             //setPerfilLogin(response.data.nome);
             
             setAuthenticated(true);
@@ -56,7 +58,8 @@ export const AuthProvider = (props) =>{
             loginInput, 
             setLoginInput, 
             authenticated, 
-            loading
+            loading,
+            autorPost
         }}>
             {props.children}
         </AuthContext.Provider>
