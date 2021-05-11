@@ -9,7 +9,7 @@ export const AuthProvider = (props) =>{
     const [authenticated, setAuthenticated] = useState(false);
     const [loading, setLoading] = useState(true);
     const [autorPost, setAutorPost] = useState("");
-    
+    const [msg, setMsg] = useState("");
 
     const [loginInput, setLoginInput] = useState({
         username: '',
@@ -47,7 +47,9 @@ export const AuthProvider = (props) =>{
            
         }catch(error){
             if(error.request.status === 401){
-                console.log('Usuario e senha invalida');
+                setMsg('login e senha invalidos');
+            }else{
+                setMsg('Ocorreu um erro inesperado, por favor tente novamente. Se o erro persistir entre em contato.');
             }
         }
     }
@@ -59,7 +61,9 @@ export const AuthProvider = (props) =>{
             setLoginInput, 
             authenticated, 
             loading,
-            autorPost
+            autorPost,
+            msg, 
+            setMsg
         }}>
             {props.children}
         </AuthContext.Provider>

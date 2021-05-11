@@ -186,7 +186,7 @@ const Post = () => {
                         <input
                             className="button-input"
                             type="submit"
-                            value="Cadastrar"
+                            value="Publicar"
                             onClick={handleSubmit}
                         />
                     </div>

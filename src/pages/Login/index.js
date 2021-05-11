@@ -7,6 +7,7 @@ import Header from '../../components/Header/index';
 import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
 import Button from '../../components/Button/index';
+import ModalMsg from '../../components/ModalMsg';
 
 
 
@@ -68,6 +69,9 @@ const Login = () => {
                                     <Button title="Cadastre-se"/>
                             </Link>
                         </div>
+                    </div>
+                    <div className="area-msg">
+                        <ModalMsg />
                     </div>
                 </FormLogin>
             </Main>

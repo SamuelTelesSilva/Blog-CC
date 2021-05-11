@@ -98,6 +98,12 @@ export const FormRegister = styled.div`
 
     }
 
+    .area-msg{
+        display: flex;
+        margin: 15px 0px 0px 0px;
+        
+    }
+
     @media screen and (max-width: 768px){
         width: 100%;
         margin-bottom: 10%;

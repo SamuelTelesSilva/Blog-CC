@@ -2,14 +2,19 @@ import React, {useState} from 'react';
 import { Grid, Main, FormRegister } from './styles';
 import { Link } from 'react-router-dom';
 import { createUser } from "../../service/blogService";
+import {useAuth} from '../../providers/auth';
 import NavBar from '../../components/NavBar/Toolbar';
 import Header from '../../components/Header/index';
 import MainToolbar from '../../components/MainToolbar/index';
 import Footer from '../../components/Footer/index';
 import Button from '../../components/Button/index';
 import history from '../../history.js';
+import ModalMsg from '../../components/ModalMsg';
 
 const Register = () => {
+
+    const {setMsg} = useAuth();
+    
 
     const [registerInput, setRegisterInput] = useState({
         nomeUsuario: '',
@@ -35,8 +40,7 @@ const Register = () => {
             'senha':hash
         }
 
-        if(registerInput.emailUsuario !== '' && registerInput.nomeUsuario  !== '' &&
-            registerInput.senhaUsuario.length > 2)
+        if(registerInput.emailUsuario !== '' && registerInput.nomeUsuario  !== '')
         {  
             await createUser(data)
             .then(response => {
@@ -49,7 +53,7 @@ const Register = () => {
                 console.log(e);
             });
         }else{     
-            alert("Não pode ter campos vazios");
+            setMsg("Não pode ter campos vazios");
         }
     }
 
@@ -113,6 +117,9 @@ const Register = () => {
                                     <Button title="Login"/>
                             </Link>
                         </div>
+                    </div>
+                    <div className="area-msg">
+                        <ModalMsg />
                     </div>
                 </FormRegister>
             </Main>

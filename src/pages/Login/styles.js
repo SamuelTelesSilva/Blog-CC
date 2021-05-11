@@ -96,7 +96,11 @@ export const FormLogin = styled.div`
                 cursor: pointer;
             }
         }
+    }
 
+    .area-msg{
+        display: flex;
+        margin: 15px 0px 0px 0px;
     }
 
     @media screen and (max-width: 768px){
