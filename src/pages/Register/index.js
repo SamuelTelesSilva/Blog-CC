@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Grid, Main, FormRegister } from './styles';
 import { Link } from 'react-router-dom';
 import { createUser } from "../../service/blogService";
-import {useAuth} from '../../providers/auth';
+import { useAuth } from '../../providers/auth';
 import NavBar from '../../components/NavBar/Toolbar';
 import Header from '../../components/Header/index';
 import MainToolbar from '../../components/MainToolbar/index';

@@ -23,7 +23,8 @@ const Post = () => {
         autor: autorPost,
         conteudo:'',
         data: '',
-        descricao: ''
+        descricao: '',
+        urlImg: ''
     });
 
     const onChangePicture = e => {    
@@ -64,7 +65,7 @@ const Post = () => {
         api.defaults.headers.common.Authorization = `Bearer ${JSON.parse(token)}`;
         let response=null;
 
-        if( imgData === null ||
+        if( 
             postInput.titulo === ''||
             postInput.autor === ''||
             postInput.descricao === ''|| 
@@ -73,21 +74,23 @@ const Post = () => {
            alert("tem que preencher todos os campos");         
         }else{
             axios.all([
+                /*
                 response = await api.post(`/api/post/img/upload`, {
                     'fileName': picture.name,
                     'mimeType': "image/png",
                     'base64': imgData.substr(22)
                 }),
+                */
                 api.post(`/api/post`, {
                     'titulo':postInput.titulo,
                     'autor':postInput.autor,
                     'conteudo':postContent,
                     'data': brData,
                     'descricao': postInput.descricao,
-                    'url_img': response.data.url
+                    'url_img': postInput.urlImg
                 })
             ])
-            .then(axios.spread((data1, data2) => {
+            .then(axios.spread((data1) => {
                 alert("Cadastrado com sucesso!!");   
                 history.push('/');
             })).catch(e => {
@@ -149,6 +152,18 @@ const Post = () => {
                             placeholder="Data do post" 
                             name="data"
                             value={postInput.data}
+                            onChange={changeValue}/>
+                    </div>
+                    <div className="cont-editor-data">
+                        <div className="editor-data">
+                            <span>Url Thumbnail: </span>
+                        </div>
+                        <input 
+                            className="input-editor-data" 
+                            type="text" 
+                            placeholder="Url Thumbnail" 
+                            name="urlImg"
+                            value={postInput.urlImg}
                             onChange={changeValue}/>
                     </div>
                     <div className="cont-editor-img">
