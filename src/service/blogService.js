@@ -8,7 +8,7 @@ import http from './api.js';
  * @returns 
  */
 export const getAll = (limit, paginaAtual) => {
-  return http.get(`/api/post?size=${limit}&page=${paginaAtual}`);
+  return http.get(`/api/post?sort=id,desc&size=${limit}&page=${paginaAtual}`);
 };
 
 export const getById = id => {
